@@ -32,7 +32,7 @@ public class UpdateController {
             log.error("Received update is null");
             return;
         }
-        if(update.getMessage()!=null){
+        if(update.hasMessage()){
             distributeMessagesByType( update);
         }else{
             log.error("Гnsupported message type is received: "+update);
@@ -41,11 +41,11 @@ public class UpdateController {
 
     private void distributeMessagesByType(Update update){
         var message= update.getMessage();
-        if (message.getText()!=null){
+        if (message.hasText()){
             processTextMessage(update);
-        }else if(message.getDocument()!=null){
+        }else if(message.hasDocument()){
             processDocMessage(update);
-        }else if (message.getPhoto()!=null){
+        }else if (message.hasPhoto()){
             processPhotoMessage(update);
         }else {
             setUnsupportedMessageTypeView(update);
@@ -61,7 +61,7 @@ public class UpdateController {
        updateProducer.produce(TEXT_MESSAGE_UPDATE, update);
     }
 
-    private void setView(SendMessage sendMessage) {
+    public void setView(SendMessage sendMessage) {
         telegramBot.sendAnswerMessage(sendMessage);
     }
 
