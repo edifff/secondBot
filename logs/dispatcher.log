@@ -46,3 +46,45 @@ ddf
 2024-09-04 15:18:38 DEBUG UpdateProducerImpl:21 - /help
 2024-09-04 15:34:23 DEBUG UpdateProducerImpl:21 - /start
 2024-09-04 15:57:11 DEBUG UpdateProducerImpl:21 - /start
+2024-09-04 18:54:22 DEBUG UpdateProducerImpl:21 - /start
+2024-09-04 18:54:22 DEBUG UpdateProducerImpl:21 - /cancel
+2024-09-04 18:54:22 DEBUG UpdateProducerImpl:21 - /cancel
+2024-09-04 21:04:04 DEBUG UpdateProducerImpl:21 - /start
+2024-09-04 21:04:10 DEBUG UpdateProducerImpl:21 - /help
+2024-09-04 21:04:22 DEBUG UpdateProducerImpl:21 - /cancel
+2024-09-04 21:04:33 DEBUG UpdateProducerImpl:21 - /registration
+2024-09-04 21:04:37 DEBUG UpdateProducerImpl:21 - f
+2024-09-04 21:04:40 DEBUG UpdateProducerImpl:21 - /ff
+2024-09-04 21:06:55 DEBUG UpdateProducerImpl:21 - 
+2024-09-04 21:07:07 DEBUG UpdateProducerImpl:21 - 
+2024-09-04 22:53:23 DEBUG UpdateProducerImpl:21 - 
+2024-09-04 23:00:53 DEBUG UpdateProducerImpl:21 - привет
+2024-09-04 23:01:04 DEBUG UpdateProducerImpl:21 - 
+2024-09-04 23:03:43 DEBUG UpdateProducerImpl:21 - 
+2024-09-04 23:07:04 DEBUG UpdateProducerImpl:21 - 
+2024-09-04 23:10:32 DEBUG UpdateProducerImpl:21 - 
+2024-09-04 23:14:21 DEBUG UpdateProducerImpl:21 - 
+2024-09-04 23:15:31 DEBUG UpdateProducerImpl:21 - 
+2024-09-04 23:16:16 DEBUG UpdateProducerImpl:21 - 
+2024-09-04 23:33:33 DEBUG UpdateProducerImpl:21 - 
+2024-09-04 23:34:14 DEBUG UpdateProducerImpl:21 - 
+2024-09-04 23:35:41 DEBUG UpdateProducerImpl:21 - 
+2024-09-04 23:38:13 DEBUG UpdateProducerImpl:21 - /start
+2024-09-04 23:39:06 DEBUG UpdateProducerImpl:21 - 
+2024-09-04 23:40:25 DEBUG UpdateProducerImpl:21 - /help
+2024-09-18 21:56:14 DEBUG UpdateProducerImpl:21 - /start
+2024-09-18 21:56:17 DEBUG UpdateProducerImpl:21 - /help
+2024-09-18 21:56:20 DEBUG UpdateProducerImpl:21 - /registration
+2024-09-18 21:56:23 DEBUG UpdateProducerImpl:21 - /registration
+2024-09-18 21:56:28 DEBUG UpdateProducerImpl:21 - /cancel
+2024-09-18 22:06:02 DEBUG UpdateProducerImpl:21 - 
+2024-09-18 23:00:58 DEBUG UpdateProducerImpl:21 - /start
+2024-09-18 23:00:58 DEBUG UpdateProducerImpl:21 - /start
+2024-09-18 23:01:13 DEBUG UpdateProducerImpl:21 - /start
+2024-09-18 23:12:14 DEBUG UpdateProducerImpl:21 - /start
+2024-09-18 23:45:00 DEBUG UpdateProducerImpl:21 - /start
+2024-09-18 23:45:02 DEBUG UpdateProducerImpl:21 - /help
+2024-09-18 23:45:25 DEBUG UpdateProducerImpl:21 - 
+2024-09-18 23:53:08 DEBUG UpdateProducerImpl:21 - 
+2024-09-18 23:54:00 DEBUG UpdateProducerImpl:21 - 
+2024-09-19 00:37:38 DEBUG UpdateProducerImpl:21 - 

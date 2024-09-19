@@ -26,6 +26,7 @@ public class ConsumerServiceImpl implements ConsumerService {
     public void consumerTextMessageUpdate(Update update) {
         log.debug("NODE: Text message is received");
         mainSevrice.processTextMessage(update);
+
     }
 
     @Override

@@ -2,7 +2,8 @@ package bot.service.impl;
 
 import bot.dao.AppUserDao;
 import bot.dao.RawDataDao;
-import bot.entity.AppUser;
+import bot.entity.enams.AppPhoto;
+import bot.entity.enams.AppUser;
 import bot.entity.RawData;
 import bot.entity.enams.AppDocument;
 import bot.exceptions.UploadFileException;
@@ -40,7 +41,9 @@ public class MainServiceImpl implements MainSevrice {
 
     @Override
     public void processTextMessage(Update update) {
+
         saveRawData(update);
+
         var appUser = findOrSaveAppUser(update);
         var userState = appUser.getState();
         var text = update.getMessage().getText();
@@ -68,9 +71,10 @@ public class MainServiceImpl implements MainSevrice {
         var appUser = findOrSaveAppUser(update);
         var chatId = update.getMessage().getChatId();
         if (isNotAllowToSendContent(chatId, appUser)) {
+            log.error("ааааа");
             return;
         }
-
+        log.error("еееее");
         try {
             AppDocument doc = fileService.processDoc(update.getMessage());
 
@@ -90,11 +94,10 @@ public class MainServiceImpl implements MainSevrice {
         var appUser = findOrSaveAppUser(update);
         var chatId = update.getMessage().getChatId();
         if (isNotAllowToSendContent(chatId, appUser)) {
-            return;
+            return ;
         }
-
         try {
-
+            AppPhoto photo=fileService.processPhoto(update.getMessage());
             var answer = "Фото успешно загружено! "
                     + "Ссылка для скачивания: " ;
             sendAnswer(answer, chatId);
@@ -103,6 +106,7 @@ public class MainServiceImpl implements MainSevrice {
             String error = "К сожалению, загрузка фото не удалась. Повторите попытку позже.";
             sendAnswer(error, chatId);
         }
+
     }
 
     private boolean isNotAllowToSendContent(Long chatId, AppUser appUser) {
@@ -161,7 +165,7 @@ public class MainServiceImpl implements MainSevrice {
                     .userName(telegramUser.getUserName())
                     .firstName(telegramUser.getFirstName())
                     .lastName(telegramUser.getLastName())
-                    .isActive(false)
+                    .isActive(true)
                     .state(BASIC_STATE)
                     .build();
             return appUserDAO.save(transientAppUser);
