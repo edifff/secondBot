@@ -10,6 +10,7 @@ import bot.exceptions.UploadFileException;
 import bot.service.FileService;
 import bot.service.MainSevrice;
 import bot.service.ProducerService;
+import bot.service.emans.LinkType;
 import bot.service.emans.ServiceCommand;
 import lombok.extern.log4j.Log4j;
 import org.springframework.stereotype.Service;
@@ -77,9 +78,9 @@ public class MainServiceImpl implements MainSevrice {
         log.error("еееее");
         try {
             AppDocument doc = fileService.processDoc(update.getMessage());
-
+            String link=fileService.generatedLink(doc.getId(), LinkType.GET_DOC);
             var answer = "Документ успешно загружен! "
-                    + "Ссылка для скачивания: " ;
+                    + "Ссылка для скачивания: "+ link ;
             sendAnswer(answer, chatId);
         } catch (UploadFileException ex) {
             log.error(ex);
@@ -98,8 +99,9 @@ public class MainServiceImpl implements MainSevrice {
         }
         try {
             AppPhoto photo=fileService.processPhoto(update.getMessage());
+            String link=fileService.generatedLink(photo.getId(), LinkType.GET_PHOTO);
             var answer = "Фото успешно загружено! "
-                    + "Ссылка для скачивания: " ;
+                    + "Ссылка для скачивания: " +link;
             sendAnswer(answer, chatId);
         } catch (UploadFileException ex) {
             log.error(ex);

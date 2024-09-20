@@ -5,9 +5,10 @@ import org.hashids.Hashids;
 public class CryptoTool {
     private final Hashids hashids;
 
+
     public CryptoTool(String salt) {
-        var minHashLenght=10;
-        this.hashids = new Hashids(salt, minHashLenght);
+        var minLenght=10;
+        this.hashids = new Hashids(salt,10);
     }
 
     public String hashOf(Long value){
@@ -15,8 +16,8 @@ public class CryptoTool {
     }
 
     public Long idOf(String value){
-        long [] res = hashids.decode(value);
-        if(res!=null && res.length>0){
+        long [] res= hashids.decode(value);
+        if (value != null && res.length>0) {
             return res[0];
         }
         return null;

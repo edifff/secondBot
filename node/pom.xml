@@ -23,10 +23,6 @@
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
 
-        <dependency>
-            <groupId>bot</groupId>
-            <artifactId>common-utils</artifactId>
-        </dependency>
 
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -42,6 +38,12 @@
         <dependency>
             <groupId>bot</groupId>
             <artifactId>secondBot</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+
+        <dependency>
+            <groupId>bot</groupId>
+            <artifactId>common-utils</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
 

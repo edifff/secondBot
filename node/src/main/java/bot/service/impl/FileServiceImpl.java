@@ -9,6 +9,8 @@ import bot.entity.enams.BinaryContent;
 import bot.exceptions.UploadFileException;
 import bot.service.FileService;
 
+import bot.service.emans.LinkType;
+import bot.utils.CryptoTool;
 import lombok.extern.log4j.Log4j;
 import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Value;
@@ -34,14 +36,18 @@ public class FileServiceImpl implements FileService {
     private String fileInfoUri;
     @Value("${service.file_storage.uri}")
     private String fileStorageUri;
+    @Value("${link.addres}")
+    private String linkAdress;
     private final AppDocumentDao appDocumentDao;
     private final AppPhotoDao appPhotoDao;
     private final BinaryContentDao binaryContentDao;
+    private final CryptoTool cryptoTool;
 
-    public FileServiceImpl(AppDocumentDao appDocumentDao, AppPhotoDao appPhotoDao, BinaryContentDao binaryContentDao) {
+    public FileServiceImpl(AppDocumentDao appDocumentDao, AppPhotoDao appPhotoDao, BinaryContentDao binaryContentDao, CryptoTool cryptoTool) {
         this.appDocumentDao = appDocumentDao;
         this.appPhotoDao = appPhotoDao;
         this.binaryContentDao = binaryContentDao;
+        this.cryptoTool = cryptoTool;
     }
 
 
@@ -74,7 +80,6 @@ public class FileServiceImpl implements FileService {
             throw new UploadFileException("Bad response from telegram service: " + response);
         }
     }
-
 
 
     private BinaryContent getPersistentBinaryContent(ResponseEntity<String> response) {
@@ -140,5 +145,11 @@ public class FileServiceImpl implements FileService {
                 String.class,
                 token, fileId
         );
+    }
+
+    @Override
+    public String generatedLink(Long docId, LinkType linkType) {
+        var hash =cryptoTool.hashOf(docId);
+        return "http://"+linkAdress+"/"+linkType+"?id"+hash;
     }
 }
