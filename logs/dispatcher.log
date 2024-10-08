@@ -94,3 +94,58 @@ ddf
 2024-09-20 10:49:30 DEBUG UpdateProducerImpl:21 - 
 2024-09-20 23:16:23 DEBUG UpdateProducerImpl:21 - 
 2024-09-20 23:16:47 DEBUG UpdateProducerImpl:21 - 
+2024-09-20 23:37:39 DEBUG UpdateProducerImpl:21 - 
+2024-09-20 23:40:19 DEBUG UpdateProducerImpl:21 - 
+2024-09-20 23:50:02 DEBUG UpdateProducerImpl:21 - 
+2024-09-20 23:50:11 DEBUG UpdateProducerImpl:21 - 
+2024-09-21 00:05:52 DEBUG UpdateProducerImpl:21 - 
+2024-09-21 00:31:14 DEBUG UpdateProducerImpl:21 - 
+2024-09-21 00:32:04 DEBUG UpdateProducerImpl:21 - 
+2024-09-21 00:32:05 DEBUG UpdateProducerImpl:21 - 
+2024-09-21 00:32:06 DEBUG UpdateProducerImpl:21 - 
+2024-09-21 00:32:07 DEBUG UpdateProducerImpl:21 - 
+2024-09-21 00:32:07 DEBUG UpdateProducerImpl:21 - 
+2024-09-21 00:32:08 DEBUG UpdateProducerImpl:21 - 
+2024-09-21 00:32:39 DEBUG UpdateProducerImpl:21 - 
+2024-09-21 00:32:49 DEBUG UpdateProducerImpl:21 - 
+2024-09-23 08:17:52 DEBUG UpdateProducerImpl:21 - 
+2024-10-01 21:35:43 DEBUG UpdateProducerImpl:21 - 
+2024-10-01 21:35:52 DEBUG UpdateProducerImpl:21 - /help
+2024-10-01 21:35:55 DEBUG UpdateProducerImpl:21 - /registration
+2024-10-01 21:36:19 DEBUG UpdateProducerImpl:21 - mishapronin2015@gmail.com
+2024-10-01 21:37:40 DEBUG UpdateProducerImpl:21 - /help
+2024-10-01 21:37:42 DEBUG UpdateProducerImpl:21 - /registration
+2024-10-01 21:39:11 DEBUG UpdateProducerImpl:21 - mishapronin2015@gmail.com
+2024-10-01 21:39:14 DEBUG UpdateProducerImpl:21 - mishapronin2015@gmail.com
+2024-10-01 21:39:16 DEBUG UpdateProducerImpl:21 - /help
+2024-10-01 21:39:18 DEBUG UpdateProducerImpl:21 - /registration
+2024-10-01 21:41:33 DEBUG UpdateProducerImpl:21 - 
+2024-10-01 21:41:47 DEBUG UpdateProducerImpl:21 - /registration
+2024-10-01 21:41:59 DEBUG UpdateProducerImpl:21 - /start
+2024-10-01 21:42:02 DEBUG UpdateProducerImpl:21 - /help
+2024-10-01 21:42:03 DEBUG UpdateProducerImpl:21 - /registration
+2024-10-02 21:19:28 DEBUG UpdateProducerImpl:21 - /start
+2024-10-02 21:19:32 DEBUG UpdateProducerImpl:21 - /help
+2024-10-02 21:19:34 DEBUG UpdateProducerImpl:21 - /registration
+2024-10-02 21:19:51 DEBUG UpdateProducerImpl:21 - mishapronin2015@gmail.com
+2024-10-02 21:29:36 DEBUG UpdateProducerImpl:21 - /start
+2024-10-02 21:29:40 DEBUG UpdateProducerImpl:21 - /help
+2024-10-02 21:29:42 DEBUG UpdateProducerImpl:21 - /registration
+2024-10-02 21:29:59 DEBUG UpdateProducerImpl:21 - mishapronin2015@gmail.com
+2024-10-02 21:32:50 DEBUG UpdateProducerImpl:21 - /start
+2024-10-02 21:32:58 DEBUG UpdateProducerImpl:21 - /help
+2024-10-02 21:33:01 DEBUG UpdateProducerImpl:21 - /registration
+2024-10-02 21:33:19 DEBUG UpdateProducerImpl:21 - mishapronin2015@gmail.com
+2024-10-02 21:34:54 DEBUG UpdateProducerImpl:21 - 
+2024-10-02 21:38:14 DEBUG UpdateProducerImpl:21 - /start
+2024-10-02 21:43:41 DEBUG UpdateProducerImpl:21 - /help
+2024-10-02 21:43:44 DEBUG UpdateProducerImpl:21 - /registration
+2024-10-02 21:43:55 DEBUG UpdateProducerImpl:21 - mishapronin2015@gmail.com
+2024-10-02 21:53:48 DEBUG UpdateProducerImpl:21 - /start
+2024-10-02 21:53:52 DEBUG UpdateProducerImpl:21 - /help
+2024-10-02 21:53:54 DEBUG UpdateProducerImpl:21 - /registration
+2024-10-02 21:54:13 DEBUG UpdateProducerImpl:21 - mishapronin2015@gmail.com
+2024-10-03 10:31:16 ERROR TelegramBot:42 - org.telegram.telegrambots.meta.exceptions.TelegramApiValidationException: URL parameter can't be empty in method: SetWebhook(url=, certificate=null, maxConnections=null, allowedUpdates=[], ipAddress=null, dropPendingUpdates=null, secretToken=null)
+2024-10-03 10:50:47 DEBUG UpdateProducerImpl:21 - 111
+2024-10-03 10:50:55 DEBUG UpdateProducerImpl:21 - ggggg
+2024-10-03 10:54:32 DEBUG UpdateProducerImpl:21 - 

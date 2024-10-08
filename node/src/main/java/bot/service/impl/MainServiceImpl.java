@@ -7,6 +7,7 @@ import bot.entity.enams.AppUser;
 import bot.entity.RawData;
 import bot.entity.enams.AppDocument;
 import bot.exceptions.UploadFileException;
+import bot.service.AppUserService;
 import bot.service.FileService;
 import bot.service.MainSevrice;
 import bot.service.ProducerService;
@@ -31,12 +32,14 @@ public class MainServiceImpl implements MainSevrice {
     private final AppUserDao appUserDAO;
 
     private final FileService fileService;
+    private final AppUserService appUserService;
 
-    public MainServiceImpl(RawDataDao rawDataDAO, ProducerService producerService, AppUserDao appUserDAO, FileService fileService) {
+    public MainServiceImpl(RawDataDao rawDataDAO, ProducerService producerService, AppUserDao appUserDAO, FileService fileService, AppUserService appUserService) {
         this.rawDataDAO = rawDataDAO;
         this.producerService = producerService;
         this.appUserDAO = appUserDAO;
         this.fileService = fileService;
+        this.appUserService = appUserService;
     }
 
 
@@ -56,7 +59,7 @@ public class MainServiceImpl implements MainSevrice {
         } else if (BASIC_STATE.equals(userState)) {
             output = processServiceCommand(appUser, text);
         } else if (WAIT_FOR_EMAIL_STATE.equals(userState)) {
-           ;
+           output=appUserService.setEmail(appUser, text);
         } else {
             log.error("Unknown user state: " + userState);
             output = "Неизвестная ошибка! Введите /cancel и попробуйте снова!";
@@ -136,7 +139,7 @@ public class MainServiceImpl implements MainSevrice {
     private String processServiceCommand(AppUser appUser, String cmd) {
         var serviceCommand = ServiceCommand.fromValue(cmd);
         if (REGISTRATION.equals(serviceCommand)) {
-            return "Команда временно недоступна.";
+            return appUserService.registerUser(appUser);
         } else if (HELP.equals(serviceCommand)) {
             return help();
         } else if (START.equals(serviceCommand)) {
@@ -160,19 +163,19 @@ public class MainServiceImpl implements MainSevrice {
 
     private AppUser findOrSaveAppUser(Update update) {
         var telegramUser = update.getMessage().getFrom();
-        AppUser persistentAppUser = appUserDAO.findAppUserByTelegramUserId(telegramUser.getId());
-        if (persistentAppUser== null) {
-            var transientAppUser = AppUser.builder()
+        var optional = appUserDAO.findByTelegramUserId(telegramUser.getId());
+        if (optional.isEmpty()) {
+            AppUser transientAppUser = AppUser.builder()
                     .telegramUserId(telegramUser.getId())
                     .userName(telegramUser.getUserName())
                     .firstName(telegramUser.getFirstName())
                     .lastName(telegramUser.getLastName())
-                    .isActive(true)
+                    .isActive(false)
                     .state(BASIC_STATE)
                     .build();
             return appUserDAO.save(transientAppUser);
         }
-        return persistentAppUser;
+        return optional.get();
     }
 
     private void saveRawData(Update update) {
